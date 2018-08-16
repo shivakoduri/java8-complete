@@ -13,17 +13,18 @@ public class Trade {
     private int quantity = 0;
 
     public Trade(int id) {
-        this.id = id;
+       setId(tradeId.getAndIncrement());
     }
 
     public Trade(String instrument, int quantity, String status) {
+        setId(tradeId.getAndIncrement());
         this.instrument = instrument;
         this.status = status;
         this.quantity = quantity;
     }
 
     public Trade(int id, String instrument, int quantity, String status) {
-        this.id = id;
+        setId(id);
         this.instrument = instrument;
         this.status = status;
         this.quantity = quantity;
